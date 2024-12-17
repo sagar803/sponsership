@@ -10,11 +10,12 @@ export default {
   theme: {
   	extend: {
   		colors: {
-			"custom-green": "#30B76E",
-			"custom-gray-light": "#BCBCBC",
-			"custom-gray-dark": "#606060",
-			"custom-red": "#EB0A02",
-			"custom-background": "#F6F6F6",
+  			'custom-green': '#30B76E',
+  			'custom-slate': '#55676E',
+  			'custom-gray-light': '#BCBCBC',
+  			'custom-gray-dark': '#606060',
+  			'custom-red': '#EB0A02',
+  			'custom-background': '#F6F6F6',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
@@ -54,6 +55,16 @@ export default {
   				'3': 'hsl(var(--chart-3))',
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
+  			},
+  			sidebar: {
+  				DEFAULT: 'hsl(var(--sidebar-background))',
+  				foreground: 'hsl(var(--sidebar-foreground))',
+  				primary: 'hsl(var(--sidebar-primary))',
+  				'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
+  				accent: 'hsl(var(--sidebar-accent))',
+  				'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
+  				border: 'hsl(var(--sidebar-border))',
+  				ring: 'hsl(var(--sidebar-ring))'
   			}
   		},
   		borderRadius: {

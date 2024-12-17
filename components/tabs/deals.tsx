@@ -16,7 +16,7 @@ import {
   Filter
 } from "lucide-react";
 
-const DealsTable = () => {
+const DealsTab = () => {
   const allDeals = [
     { name: 'Toronto Ultra Major V', submittedBy: 'Diamond Sponsorship', roi: 1.8, date: '24 Dec 2023', amount: 62000.00, status: 'Approved' },
     { name: 'Stranger Things Experience', submittedBy: 'Diamond Sponsorship', roi: 1.74, date: '24 Dec 2023', amount: 12000.00, status: 'Pending' },
@@ -183,4 +183,4 @@ const DealsTable = () => {
   );
 };
 
-export default DealsTable;
+export default DealsTab;

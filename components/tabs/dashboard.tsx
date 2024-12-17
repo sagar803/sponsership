@@ -17,6 +17,7 @@ import {
   MoveDownLeft,
   MoveUpRightIcon
 } from "lucide-react";
+import DealsCard from '../deals-card';
 
 const Dashboard = () => {
   const metrics = [
@@ -44,7 +45,7 @@ const Dashboard = () => {
           <h1 className="text-2xl font-medium">Good Morning</h1>
         </div>
         
-        <div className="flex items-center gap-4 rounded-full bg-white p-1">
+        <div className="hidden md:flex items-center gap-4 rounded-full bg-white p-1">
           <Button variant="outline" className="flex items-center gap-3 border-none bg-custom-background rounded-full">
             <Sheet strokeWidth={1} />
             <p className='font-normal'>Region </p>
@@ -65,7 +66,7 @@ const Dashboard = () => {
       </div>
 
       {/* Metrics Grid */}
-      <div className="grid grid-cols-5 gap-4 mb-8 px-6 py-2 bg-white rounded-xl">
+      <div className="hidden sm:grid grid-cols-5 gap-4 mb-8 px-6 py-2 bg-white rounded-xl">
         {metrics.map((metric, index) => (
           <Card key={index} className="p-2 border-none flex items-center gap-4 shadow-none">
             <metric.icon strokeWidth={1} className="size-8 p-2 mb-2 rounded-full bg-custom-background" />
@@ -86,41 +87,25 @@ const Dashboard = () => {
       </div>
 
       {/* Upcoming Activations */}
-      <div className="grid grid-cols-5 gap-8">
-        <div className="col-span-3 bg-white rounded-2xl p-8">
+      <div className="flex flex-col md:grid grid-cols-5 gap-8 ">
+        <div className="col-span-3 bg-white rounded-2xl p-2 sm:p-8">
           <div className="flex justify-between items-center mb-4">
-            <h2 className="text-3xl font-medium">Upcoming Activations</h2>
+            <h2 className="sm:text-3xl font-medium">Upcoming Activations</h2>
             <Button variant="link">View All</Button>
           </div>
           
           <Card className='border-none shadow-none'>
               {activations.map((activation, index) => (
-                <div key={index} className="flex justify-between items-center p-4 bg-custom-background my-3 rounded-lg">
-                  <div className='basis-2/5'>
-                    <div className="font-semibold">{activation.name}</div>
-                    <div className="text-xs text-gray-500">{activation.location}</div>
-                  </div>
-                  <span className="font-semibold ">${activation.amount.toLocaleString()}</span>
-                  <span className={`px-3 py-1 rounded-full text-sm text-center  w-[92px] ${
-                    activation.status === 'Approved' ? 'bg-custom-green bg-opacity-20 text-custom-green' :
-                    activation.status === 'Declined' ? 'bg-custom-red bg-opacity-20 text-custom-red' :
-                    'bg-custom-gray-light text-gray-600'
-                  }`}>
-                    {activation.status}
-                  </span>
-                  <div className='flex justify-end'>
-                    <ChevronRight strokeWidth={1} className="size-6 "/>
-                  </div>
-                </div>
+                <DealsCard key={index} data={activation}/>
               ))}
           </Card>
         </div>
 
         <div className='col-span-2'>
-          <div className="flex items-center gap-2 mb-5 text-center p-8 bg-white rounded-2xl">
+          <div className="flex items-center gap-2 mb-5 text-center p-2 sm:p-8 bg-white rounded-2xl">
             <ThumbsUp className="size-10 text-custom-green bg-custom-green bg-opacity-20 p-3 rounded-full" />
-            <h2 className="text-lg font-medium text-nowrap">Positive Brand Sentiment</h2>
-            <span className="text-xs text-gray-500 ml-auto">12k Votes</span>
+            <h2 className="sm:text-lg font-medium text-nowrap">Positive Brand Sentiment</h2>
+            <span className="hidden sm:block text-xs text-gray-500 ml-auto">12k Votes</span>
           </div>
 
           <Card className="mb-4 border-none shadow-none p-8">
@@ -151,9 +136,9 @@ const Dashboard = () => {
                 <div className="text-2xl font-semibold">$16.6K</div>
                 <div className="text-[9px] text-gray-500">Cost per Activation</div>
               </div>
-              <div className="col-span-1 p-2 pt-6 text-sm text-gray-200 bg-black rounded-xl flex">
+              <div className="col-span-1 p-2 pt-12 text-sm text-gray-200 bg-black rounded-xl flex">
                 <p>Manage Deals</p>
-                <MoveUpRightIcon color='white' className='size-5px'/>
+                <MoveUpRightIcon color='white' className='size-5'/>
               </div>
             </div>
           </Card>
