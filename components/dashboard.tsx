@@ -37,7 +37,7 @@ const Dashboard = () => {
   ];
 
   return (
-    <div className="p-6">
+    <div>
       <div className="flex justify-between items-center mb-8">
         <div>
           <div className="text-sm text-gray-500">Hello Leslie,</div>
